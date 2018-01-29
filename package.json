@@ -7,7 +7,8 @@
     "private": true,
     "scripts": {
         "start": "run-p start:wordpress start:webpack",
-        "start:webpack": "webpack-dev-server --port 8000 --hot --inline",
+        "start:webpack":
+            "webpack-dev-server --port 8000 --hot --inline --info=false",
         "start:wordpress": "wp server",
         "build:webpack": "NODE_ENV=production webpack"
     },

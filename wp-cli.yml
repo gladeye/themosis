@@ -1,4 +1,5 @@
-path: htdocs
+path: htdocs/cms
 server:
   host: 0.0.0.0
   port: 8080
+  docroot: htdocs

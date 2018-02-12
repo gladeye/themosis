@@ -6,7 +6,7 @@ const bento = create({
     proxy: "http://0.0.0.0:8080"
 });
 
-bento.bundle("main", "~/scripts/main.js");
+bento.bundle("main", "~/main.js");
 bento.set("emitFiles", true);
 
 module.exports = bento.export(process.env.NODE_ENV);

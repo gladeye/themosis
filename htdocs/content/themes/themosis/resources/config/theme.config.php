@@ -30,7 +30,7 @@ return [
 
     /* --------------------------------------------------------------- */
     // Restrict access to the WordPress Admin for users with a
-    // specific role. 
+    // specific role.
     // Once the theme is activated, you can only log in by going
     // to 'wp-login.php' or 'login' (if permalinks changed) urls.
     // By default, allows 'administrator', 'editor', 'author',
@@ -75,6 +75,7 @@ return [
         'User' => Themosis\Facades\User::class,
         'Validator' => Themosis\Facades\Validator::class,
         'View' => Themosis\Facades\View::class,
-    ]
+        'Bento' => Theme\Facades\Bento::class,
+    ],
 
 ];

@@ -12,5 +12,5 @@ return [
     'Theme\\Models\\' => themosis_path('theme.resources') . 'models',
     'Theme\\Providers\\' => themosis_path('theme.resources') . 'providers',
     'Theme\\Services\\' => themosis_path('theme.resources') . 'services',
-
+    'Theme\\Facades\\' => themosis_path('theme.resources') . 'facades',
 ];

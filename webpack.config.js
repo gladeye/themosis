@@ -3,6 +3,7 @@ const { create } = require("@gladeye/bento");
 const bento = create({
     homeDir: "./htdocs/content/themes/themosis/assets",
     outputDir: "./htdocs/content/themes/themosis/dist",
+    publicPath: "/content/themes/themosis/dist/",
     proxy: "http://0.0.0.0:8080"
 });
 

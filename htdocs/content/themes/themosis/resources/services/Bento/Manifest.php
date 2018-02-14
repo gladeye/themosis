@@ -24,22 +24,28 @@ class Manifest
      * @param string $name
      * @return void
      */
-    public function add_main_script()
+    public function addMainScript()
     {
-        $name = "main.js";
+        $name = 'main.js';
         $deps = [];
 
-        if (isset($this->manifest["runtime.js"])) {
-            $deps[] = "runtime";
-            Asset::add("runtime", $this->manifest["runtime.js"], [], '1.0', true);
+        if (isset($this->manifest['runtime.js'])) {
+            $deps[] = 'runtime';
+            Asset::add(
+                'runtime', $this->getFile('runtime.js'), [], '1.0', true
+            );
         }
 
-        if (isset($this->manifest["vendor.js"])) {
-            $deps[] = "vendor";
-            Asset::add("vendor", $this->manifest["vendor.js"], [], '1.0', true);
+        if (isset($this->manifest['vendor.js'])) {
+            $deps[] = 'vendor';
+            Asset::add(
+                'vendor', $this->getFile('vendor.js'), [], '1.0', true
+            );
         }
 
-        Asset::add(basename($name), $this->manifest[$name], $deps, '1.0', true);
+        Asset::add(
+            basename($name), $this->getFile($name), $deps, '1.0', true
+        );
     }
 
     /**
@@ -48,9 +54,9 @@ class Manifest
      * @param string $name
      * @return void
      */
-    public function add_main_style()
+    public function addMainStyle()
     {
-        $name = "main.css";
+        $name = 'main.css';
 
         if (isset($this->manifest[$name])) {
             Asset::add(basename($name), $this->manifest[$name]);
@@ -68,5 +74,15 @@ class Manifest
         if (isset($this->manifest[$name])) {
             return themosis_theme_assets() . $this->manifest[$name];
         }
+    }
+
+    /**
+     * Gets the file.
+     *
+     * @param      string  $name   The name
+     */
+    protected function getFile(string $name)
+    {
+        return '/' . basename($this->manifest[$name]);
     }
 }
